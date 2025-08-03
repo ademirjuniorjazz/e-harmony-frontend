@@ -199,4 +199,114 @@ const HarmonyAnalyzer = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <ResultCard sx<span class="cursor">█</span>
+          <ResultCard sx={{ mb: 3 }}>
+            <CardContent sx={{ p: 3 }}>
+              <Typography variant="h6" fontWeight={600} gutterBottom>
+                🎼 Progressão Atual
+              </Typography>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
+                {currentProgression.map((chord, index) => (
+                  <Chip
+                    key={index}
+                    label={chord}
+                    variant="filled"
+                    color="primary"
+                    sx={{ fontFamily: 'JetBrains Mono', fontSize: '0.9rem' }}
+                  />
+                ))}
+              </Box>
+            </CardContent>
+          </ResultCard>
+        </motion.div>
+      )}
+
+      {analysisResult && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <ResultCard>
+            <CardContent sx={{ p: 3 }}>
+              <Typography variant="h6" fontWeight={600} gutterBottom>
+                📊 Análise Harmônica
+              </Typography>
+              
+              <Accordion defaultExpanded>
+                <AccordionSummary expandIcon={<ExpandMore />}>
+                  <Typography variant="subtitle1" fontWeight={600}>
+                    Tonalidade e Escala
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} md={6}>
+                      <Typography variant="body2" color="textSecondary">
+                        Tonalidade Principal:
+                      </Typography>
+                      <Typography variant="h6" color="primary">
+                        {analysisResult.key || 'Não identificada'}
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                      <Typography variant="body2" color="textSecondary">
+                        Modo:
+                      </Typography>
+                      <Typography variant="h6">
+                        {analysisResult.mode || 'Maior'}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </AccordionDetails>
+              </Accordion>
+
+              <Accordion>
+                <AccordionSummary expandIcon={<ExpandMore />}>
+                  <Typography variant="subtitle1" fontWeight={600}>
+                    Funções Harmônicas
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  {analysisResult.functions && analysisResult.functions.map((func, index) => (
+                    <Box key={index} sx={{ mb: 2 }}>
+                      <Typography variant="body1" fontWeight={600}>
+                        {currentProgression[index]} → {func.roman}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary">
+                        {func.function}
+                      </Typography>
+                      <Divider sx={{ mt: 1 }} />
+                    </Box>
+                  ))}
+                </AccordionDetails>
+              </Accordion>
+
+              <Accordion>
+                <AccordionSummary expandIcon={<ExpandMore />}>
+                  <Typography variant="subtitle1" fontWeight={600}>
+                    Sugestões de Melhoria
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  {analysisResult.suggestions && analysisResult.suggestions.length > 0 ? (
+                    analysisResult.suggestions.map((suggestion, index) => (
+                      <Alert key={index} severity="info" sx={{ mb: 1 }}>
+                        {suggestion}
+                      </Alert>
+                    ))
+                  ) : (
+                    <Typography variant="body2" color="textSecondary">
+                      Sua progressão está bem estruturada harmonicamente!
+                    </Typography>
+                  )}
+                </AccordionDetails>
+              </Accordion>
+            </CardContent>
+          </ResultCard>
+        </motion.div>
+      )}
+    </AnalyzerContainer>
+  );
+};
+
+export default HarmonyAnalyzer;
