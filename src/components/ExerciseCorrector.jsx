@@ -39,7 +39,7 @@ import {
 import { styled } from '@mui/material/styles';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { apiService } from '../api';
-import { useStore } from '../store';
+import { useHarmonyStore } from '../store';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
@@ -83,8 +83,8 @@ const HintBox = styled(Box)(({ theme }) => ({
 }));
 
 const ExerciseCorrector = () => {
-  const { user } = useStore();
-  const [selectedVolume, setSelectedVolume] = useState('volume1');
+  const { user } = useHarmonyStore();
+const [selectedVolume, setSelectedVolume] = useState('volume1');
   const [selectedChapter, setSelectedChapter] = useState('');
   const [selectedExercise, setSelectedExercise] = useState('');
   const [userAnswer, setUserAnswer] = useState('');
