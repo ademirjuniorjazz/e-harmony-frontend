@@ -9,9 +9,9 @@ import { styled } from '@mui/material/styles';
 // Components
 import Layout from './components/Layout';
 import HarmonyAnalyzer from './components/HarmonyAnalyzer';
-import ExerciseCorrector from './components/exercises/ExerciseCorrector';
-import ReharmonizationSystem from './components/reharmonization/ReharmonizationSystem';
-import ImprovisationConsultant from './components/improvisation/ImprovisationConsultant';
+import ExerciseCorrector from './components/ExerciseCorrector';
+import ReharmonizationSystem from './components/ReharmonizationSystem';
+import ImprovisationConsultant from './components/ImprovisationConsultant';
 import AIChat from './components/chat/AIChat';
 
 // Create QueryClient
