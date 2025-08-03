@@ -12,8 +12,7 @@ import HarmonyAnalyzer from './components/HarmonyAnalyzer';
 import ExerciseCorrector from './components/ExerciseCorrector';
 import ReharmonizationSystem from './components/ReharmonizationSystem';
 import ImprovisationConsultant from './components/ImprovisationConsultant';
-import AIChat from './components/chat/AIChat';
-
+import AIChat from './components/AIChat';
 // Create QueryClient
 const queryClient = new QueryClient({
   defaultOptions: {
