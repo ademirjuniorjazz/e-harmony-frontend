@@ -4,7 +4,7 @@ import { Box, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { Toaster } from 'react-hot-toast';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import { useUIStore, useAuthStore } from '../../context/store';
+import { useUIStore, useAuthStore } from '../store';
 
 const theme = createTheme({
   palette: {
