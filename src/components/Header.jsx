@@ -19,8 +19,7 @@ import {
   Settings,
   MusicNote
 } from '@mui/icons-material';
-import { useAuthStore, useUIStore } from '../../context/store';
-
+import { useAuthStore, useUIStore } from '../store';
 const StyledAppBar = styled(AppBar)\`
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
