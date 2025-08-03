@@ -7,7 +7,7 @@ import { CssBaseline, CircularProgress, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 // Components
-import Layout from './components/common/Layout';
+import Layout from './components/Layout';
 import HarmonyAnalyzer from './components/harmony/HarmonyAnalyzer';
 import ExerciseCorrector from './components/exercises/ExerciseCorrector';
 import ReharmonizationSystem from './components/reharmonization/ReharmonizationSystem';
