@@ -138,8 +138,8 @@ const PremiumOverlay = styled(Box)(({ theme }) => ({
 }));
 
 const AIChat = () => {
-  const { user } = useStore();
-  const messagesEndRef = useRef(null);
+const { user } = useHarmonyStore();
+const messagesEndRef = useRef(null);
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
