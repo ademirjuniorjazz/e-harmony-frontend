@@ -51,7 +51,7 @@ import {
 } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import { useQuery, useMutation } from '@tanstack/react-query';
-import { apiService } from '../api';
+import { apiService } → import { harmonyService }
 import { useHarmonyStore } from '../store';
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
@@ -115,7 +115,7 @@ const { user } = useHarmonyStore();
 
   // Fetch reharmonization suggestions
   const reharmonizeMutation = useMutation({
-    mutationFn: (reharmonizeData) => apiService.getReharmonization(reharmonizeData),
+    apiService.getReharmonization → harmonyService.reharmonize
     onSuccess: (data) => {
       setReharmonizations(data.suggestions);
       setCurrentStep(1);
