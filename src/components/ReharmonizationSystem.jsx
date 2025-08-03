@@ -100,7 +100,7 @@ const TechniqueChip = styled(Chip)(({ theme }) => ({
 }));
 
 const ReharmonizationSystem = () => {
-  const { user } = useStore();
+const { user } = useHarmonyStore();
   const [activeTab, setActiveTab] = useState(0);
   const [originalProgression, setOriginalProgression] = useState('');
   const [selectedKey, setSelectedKey] = useState('C');
