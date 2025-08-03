@@ -8,8 +8,11 @@ import {
   Button
 } from '@mui/material';
 import { MusicNote } from '@mui/icons-material';
+import { useHarmonyStore } from '../store';
 
 const ImprovisationConsultant = () => {
+  const { currentProgression } = useHarmonyStore();
+
   return (
     <Box sx={{ p: 3 }}>
       <Typography variant="h4" fontWeight={600} gutterBottom>
