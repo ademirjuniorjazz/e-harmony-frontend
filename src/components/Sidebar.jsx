@@ -22,7 +22,7 @@ import {
   Star,
   School
 } from '@mui/icons-material';
-import { useUIStore, useAuthStore } from '../../context/store';
+import { useUIStore, useAuthStore } from '../store';
 
 const DRAWER_WIDTH = 280;
 
