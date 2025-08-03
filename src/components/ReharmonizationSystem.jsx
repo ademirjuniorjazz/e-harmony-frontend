@@ -51,9 +51,8 @@ import {
 } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import { useQuery, useMutation } from '@tanstack/react-query';
-import { apiService } from '../../services/api';
-import { useStore } from '../../store/useStore';
-
+import { apiService } from '../api';
+import { useStore } from '../store';
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
   marginBottom: theme.spacing(2),
