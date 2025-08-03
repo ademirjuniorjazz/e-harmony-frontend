@@ -22,9 +22,8 @@ import {
   Star
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
-import { useAuthStore, useHarmonyStore, useUIStore } from '../../context/store';
-import { harmonyService } from '../../services/api';
-
+import { useAuthStore, useHarmonyStore, useUIStore } from '../store';
+import { harmonyService } from '../api';
 const DashboardContainer = styled(Box)`
   padding: 0;
 `;
