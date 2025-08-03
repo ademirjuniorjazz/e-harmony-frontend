@@ -8,7 +8,7 @@ import { styled } from '@mui/material/styles';
 
 // Components
 import Layout from './components/Layout';
-import HarmonyAnalyzer from './components/harmony/HarmonyAnalyzer';
+import HarmonyAnalyzer from './components/HarmonyAnalyzer';
 import ExerciseCorrector from './components/exercises/ExerciseCorrector';
 import ReharmonizationSystem from './components/reharmonization/ReharmonizationSystem';
 import ImprovisationConsultant from './components/improvisation/ImprovisationConsultant';
