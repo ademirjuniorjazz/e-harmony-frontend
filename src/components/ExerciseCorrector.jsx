@@ -82,9 +82,9 @@ const HintBox = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(1),
 }));
 
-const ExerciseCorrector = () => {
-  const { user } = useHarmonyStore();
-const [selectedVolume, setSelectedVolume] = useState('volume1');
+queryKey: ['exercises', selectedVolume],
+queryFn: () => harmonyService.getExercises(selectedVolume),
+enabled: !!selectedVolume,
   const [selectedChapter, setSelectedChapter] = useState('');
   const [selectedExercise, setSelectedExercise] = useState('');
   const [userAnswer, setUserAnswer] = useState('');
@@ -102,7 +102,7 @@ const [selectedVolume, setSelectedVolume] = useState('volume1');
 
   // Submit answer mutation
   const submitAnswerMutation = useMutation({
-    mutationFn: (answerData) => apiService.correctExercise(answerData),
+    mutationFn: (answerData) => harmonyService.correctExercise(answerData),
     onSuccess: (data) => {
       setScore(data.score);
       setTotalAttempts(prev => prev + 1);
@@ -111,7 +111,7 @@ const [selectedVolume, setSelectedVolume] = useState('volume1');
 
   // Generate new exercise mutation
   const generateExerciseMutation = useMutation({
-    mutationFn: (exerciseParams) => apiService.generateExercise(exerciseParams),
+    mutationFn: (exerciseParams) => harmonyService.getExercises(exerciseParams),
     onSuccess: (data) => {
       setCurrentExercise(data);
       setUserAnswer('');
