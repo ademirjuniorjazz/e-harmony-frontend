@@ -54,7 +54,7 @@ import {
 import { styled } from '@mui/material/styles';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { apiService } from '../api';
-import { useStore } from '../store';
+import { useHarmonyStore } from '../store';
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
