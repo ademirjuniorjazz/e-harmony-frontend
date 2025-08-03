@@ -53,7 +53,7 @@ import {
 } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import { useQuery, useMutation } from '@tanstack/react-query';
-import { apiService } → import { harmonyService }
+import { harmonyService } from '../api';
 import { useHarmonyStore } from '../store';
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
