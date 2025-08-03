@@ -38,7 +38,7 @@ import {
 } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import { useQuery, useMutation } from '@tanstack/react-query';
-import { apiService } from '../api';
+import { apiService } → import { harmonyService }
 import { useHarmonyStore } from '../store';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
@@ -96,7 +96,7 @@ const [selectedVolume, setSelectedVolume] = useState('volume1');
   // Fetch available exercises
   const { data: exerciseData, isLoading: exercisesLoading } = useQuery({
     queryKey: ['exercises', selectedVolume],
-    queryFn: () => apiService.getExercises(selectedVolume),
+   apiService.getExercises → harmonyService.getExercises
     enabled: !!selectedVolume,
   });
 
