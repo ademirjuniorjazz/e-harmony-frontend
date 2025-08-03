@@ -53,7 +53,7 @@ import {
 } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import { useQuery, useMutation } from '@tanstack/react-query';
-import { apiService } from '../api';
+import { apiService } → import { harmonyService }
 import { useHarmonyStore } from '../store';
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
@@ -157,7 +157,7 @@ const messagesEndRef = useRef(null);
   // Load chat history
   const { data: chatHistoryData } = useQuery({
     queryKey: ['chatHistory', user?.id],
-    queryFn: () => apiService.getChatHistory(),
+    apiService.getChatHistory → harmonyService.chatWithAI
     enabled: !!user?.id,
   });
 
